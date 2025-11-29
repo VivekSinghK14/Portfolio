@@ -24,7 +24,7 @@ const Header = () => {
         Aspiring Data Scientist based in Germany.
       </h1>
 
-      <p className='max-w-2xl mx-auto font-Ovo text-black dark:text-gray-200'>
+      <p className='max-w-2xl mx-auto font-Ovo text-black '>
         IT-Centric Professional with Strategic Business Insight — leveraging expertise in Data Science, AI, SQL, Databases, Power BI, 
         Machine Learning, and Analytics.  Passionate about bridging technology and business impact.
       
