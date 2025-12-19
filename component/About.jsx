@@ -56,7 +56,7 @@ const About = ({ infoList, toolsData }) => {
 
         <div className='flex-1'>
           <p className='mb-10 max-w-2xl font-Outfit text-gray-800 text-base sm:text-lg leading-relaxed'>
-            I’m a Data Scientist with a B.Tech in Computer Science and over 4 years of industry experience. Currently pursuing an M.Sc. in Digital Engineering in Germany, I am passionate about working with data—analyzing it, building predictive models, and creating actionable insights that drive real-world solutions. My expertise spans Machine Learning, Analytics, SQL, and Data Visualization using tools like Python, Power BI, and interactive dashboards. I enjoy transforming complex data into clear, visually impactful insights that help organizations make informed decisions.
+             Data Scientist and Machine Learning Engineer with 4+ years of experience in statistical analysis, predictive modeling, and business intelligence. Proficient in Python, SQL, and Power BI with demonstrated success in increasing data processing efficiency by 30% and model accuracy by 33%.
           </p>
 
           {/* My Tech Stack Section */}
