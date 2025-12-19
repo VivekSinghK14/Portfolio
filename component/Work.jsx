@@ -8,9 +8,10 @@ const Work = () => {
       location: "Magdeburg, Germany",
       date: "Oct 2025 – Present",
       details: [
-        "Developing and implementing academic projects using SQL, UML, HTML, ER Diagrams, and XML, showcasing strong understanding of database concepts and system design.",
-        "Creating mini-projects and practice exercises that improved class participation and practical understanding by 20–25%.",
-        "Applying SAP S/4HANA and SAP Datasphere to analyze real business case studies, gaining hands-on experience with enterprise processes like finance, procurement, and supply chain..",
+        " Enhanced data science projects, redesigning exercises with updated curriculum and integrating new datasets, resulting in a 20-25% improvement in student engagement.",
+        "Delivered SAP S/4HANA and Datasphere solutions for academic use cases.",
+        "Created learning material on machine learning, statistics, and databases.",
+        "Mentored 40+ students on Python programming, SQL queries, and data visualization techniques.",
       ],
     },
     {
@@ -19,13 +20,12 @@ const Work = () => {
       location: "India",
       date: "Oct 2022 – Mar 2025",
       details: [
-        "Designed and improved SQL databases and pipelines, helping the organization increase data processing efficiency by 25–30%.",
-        "Supported Machine Learning and Data Science tasks, contributing to a 15% improvement in data-driven decision-making for marketing and operations.",
-        "Cleaned and analyzed data using Python, improving overall data accuracy and reliability by 20%.",
+        "Optimized SQL databases and ETL pipelines, increasing data processing efficiency by 30%.",
+        "Developed ML models using Python libraries (Scikit-learn, TensorFlow), improving predictive accuracy by 33%.",
+        "Built interactive Power BI dashboards for executive leadership across 5+ departments.",
         "Created dashboards and reports in Power BI that reduced manual reporting time by 30% and improved visibility for management.",
-        "Worked closely with different teams to understand business needs and helped deliver data solutions that boosted team productivity by 15%.",
+        "Performed statistical analysis using Pandas and NumPy to identify business trends and patterns.",
         "Managed tasks independently and introduced simple process improvements, leading to a 10% reduction in repetitive work.",
-        "Used Python, Scikit-learn, GitHub, HTML, and Docker in daily workflows, improving project consistency and reducing setup time by 20%.",
         "Supported sales and marketing efforts using Salesforce, LinkedIn, and ZoomInfo, contributing to a 10–12% increase in qualified leads and outreach effectiveness."
       ],
     },
@@ -35,10 +35,9 @@ const Work = () => {
       location: "Delhi, India",
       date: "Jul 2020 – Sep 2022",
       details: [
-        "Led and mentored a team of 18–20 trainees, improving their performance, confidence, and retention through structured guidance and regular feedback.",
-        "Consistently met revenue targets by planning and executing effective business development and sales strategies.",
-        "Trained and supported new Business Development Trainees to achieve their KPIs, resulting in stronger team productivity and smoother onboarding.",
-        "Contributed to company growth by implementing practical sales approaches that improved lead conversion and client engagement.",
+        " Achieved 100% of revenue targets through strategic business development initiative.",
+        "Analyzed market trends and customer data, optimizing sales strategies by 25%.",
+        " Managed 50+ client relationships and delivered presentations to key stakeholders.",
       ],
     },
   ];
