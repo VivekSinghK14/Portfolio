@@ -1,120 +1,90 @@
-import React, { useState } from "react";
+'use client'
+import { useState } from 'react'
+import Section from './Section'
+import Reveal from './Reveal'
+import { profile } from './data'
+import { GitHubIcon, LinkedInIcon, MailIcon, PhoneIcon } from './Icons'
+
+const channels = [
+  { label: 'Email', value: profile.email, href: `mailto:${profile.email}`, Icon: MailIcon },
+  { label: 'Phone', value: profile.phone, href: profile.phoneHref, Icon: PhoneIcon },
+  { label: 'LinkedIn', value: 'vivek-singh-817a77195', href: profile.linkedin, Icon: LinkedInIcon },
+  { label: 'GitHub', value: 'VivekSinghK14', href: profile.github, Icon: GitHubIcon },
+]
+
+const input =
+  'w-full rounded-lg border border-line bg-bg/60 px-4 py-3 text-sm text-fg placeholder:text-slate-500 outline-none transition focus:border-accent/60 focus:ring-2 focus:ring-accent/20'
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
+  const [form, setForm] = useState({ name: '', email: '', message: '' })
+  const onChange = (e) => setForm({ ...form, [e.target.name]: e.target.value })
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    alert(`Message sent!\nName: ${formData.name}\nEmail: ${formData.email}\nMessage: ${formData.message}`);
-    setFormData({ name: "", email: "", message: "" });
-  };
+  // No backend: compose the message in the visitor's own email client.
+  const onSubmit = (e) => {
+    e.preventDefault()
+    const subject = encodeURIComponent(`Portfolio enquiry from ${form.name}`)
+    const body = encodeURIComponent(`${form.message}\n\n— ${form.name} (${form.email})`)
+    window.location.href = `mailto:${profile.email}?subject=${subject}&body=${body}`
+  }
 
   return (
-    <div id="Contact" className="w-full px-[12%] py-20 scroll-mt-20">
-      <h4 className="text-center mb-2 text-lg font-Ovo text-gray-700 tracking-wide">
-        Get In Touch
-      </h4>
-      <h2 className="text-center text-5xl font-Ovo mb-16">
-        Contact Me
-      </h2>
-
-      <div className="max-w-3xl mx-auto">
-
-        {/* FORM */}
-        <form
-          onSubmit={handleSubmit}
-          className="flex flex-col gap-6 bg-white p-10 rounded-3xl border border-gray-300 shadow-lg"
-        >
-          {/* Name */}
-          <input
-            type="text"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            placeholder="Your Name"
-            className="p-4 rounded-xl border border-gray-300 font-Outfit text-gray-700 
-                       focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all"
-            required
-          />
-
-          {/* Email */}
-          <input
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            placeholder="Your Email"
-            className="p-4 rounded-xl border border-gray-300 font-Outfit text-gray-700 
-                       focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all"
-            required
-          />
-
-          {/* Message */}
-          <textarea
-            name="message"
-            value={formData.message}
-            onChange={handleChange}
-            rows="6"
-            placeholder="Your Message"
-            className="p-4 rounded-xl border border-gray-300 font-Outfit text-gray-700 
-                       focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all resize-none"
-            required
-          ></textarea>
-
-          {/* Submit Button */}
-          <button
-            type="submit"
-            className="relative overflow-hidden bg-[#d4a373] text-white py-3 rounded-full 
-                       font-Ovo text-lg shadow-lg hover:shadow-xl transition-all duration-300 
-                       transform hover:-translate-y-1 hover:scale-105 
-                       before:absolute before:top-0 before:left-0 before:w-0 before:h-full 
-                       before:bg-white/10 before:transition-all before:duration-300 hover:before:w-full"
-          >
-            <span className="relative z-10">Send Message</span>
-          </button>
-        </form>
-
-        {/* CONTACT INFO */}
-        <div className="mt-12 text-center text-gray-600 font-Outfit space-y-1">
-          <p>
-            Email:{" "}
-            <a
-              href="mailto:viveksinghkj@gmail.com"
-              className="text-indigo-600 hover:underline"
-            >
-              viveksinghkj@gmail.com
-            </a>
+    <Section id='contact' index='06' eyebrow='contact' title="Let's talk">
+      <div className='grid gap-8 lg:grid-cols-[1fr_1.2fr]'>
+        <Reveal>
+          <p className='max-w-md text-base leading-relaxed text-muted sm:text-lg'>
+            I'm looking for Werkstudent and internship roles in data analytics, BI, machine learning or
+            automation. Email is the fastest way to reach me.
           </p>
-          <p> Phone: <a
-            href="tel:+49 15565 165463"
-            className="text-indigo-600 hover:underline"
-          >
-            +49 15565 165463
-          </a></p>
-          <p>
-            LinkedIn:{" "}
-            <a
-              href="https://www.linkedin.com/public-profile/settings?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_self_edit_contact-info%3BvTwapT0YQu2QjCLqnJFXfg%3D%3D"
-              className="text-indigo-600 hover:underline"
-              target="_blank"
-              rel="noreferrer"
-            >
-              linkedin.com/in/myprofile
-            </a>
-          </p>
-        </div>
+          <ul className='mt-8 space-y-3'>
+            {channels.map(({ label, value, href, Icon }) => (
+              <li key={label}>
+                <a
+                  href={href}
+                  target={href.startsWith('http') ? '_blank' : undefined}
+                  rel='noreferrer'
+                  className='card card-hover flex items-center gap-4 px-5 py-4'
+                >
+                  <span className='grid h-10 w-10 place-items-center rounded-lg bg-accent/10 text-accent'>
+                    <Icon width={18} height={18} />
+                  </span>
+                  <span>
+                    <span className='block text-xs text-muted'>{label}</span>
+                    <span className='block text-sm font-medium text-fg break-all'>{value}</span>
+                  </span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </Reveal>
 
+        <Reveal delay={120}>
+          <form onSubmit={onSubmit} className='card space-y-4 p-6 sm:p-8'>
+            <div className='grid gap-4 sm:grid-cols-2'>
+              <label className='block'>
+                <span className='mb-1.5 block text-xs text-muted'>Name</span>
+                <input name='name' value={form.name} onChange={onChange} required className={input} placeholder='Jane Doe' />
+              </label>
+              <label className='block'>
+                <span className='mb-1.5 block text-xs text-muted'>Email</span>
+                <input type='email' name='email' value={form.email} onChange={onChange} required className={input} placeholder='jane@company.com' />
+              </label>
+            </div>
+            <label className='block'>
+              <span className='mb-1.5 block text-xs text-muted'>Message</span>
+              <textarea name='message' rows={6} value={form.message} onChange={onChange} required className={`${input} resize-none`} placeholder='Role, team and what you are looking for…' />
+            </label>
+            <button
+              type='submit'
+              className='w-full rounded-lg bg-accent px-5 py-3 text-sm font-semibold text-bg transition hover:brightness-110'
+            >
+              Send message
+            </button>
+            <p className='text-center text-xs text-slate-500'>Opens your email app with the message pre-filled.</p>
+          </form>
+        </Reveal>
       </div>
-    </div>
-  );
-};
+    </Section>
+  )
+}
 
-export default Contact;
+export default Contact

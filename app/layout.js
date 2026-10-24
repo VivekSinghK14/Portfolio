@@ -1,27 +1,26 @@
-import { Outfit, Ovo } from "next/font/google"; 
-import "./globals.css"; 
+import { Inter, JetBrains_Mono } from "next/font/google";
+import "./globals.css";
 
-const outfit = Outfit({ 
-  subsets: ["latin"], 
-  weight :["400", "500", "600", "700"] 
-}); 
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const jetbrains = JetBrains_Mono({ subsets: ["latin"], variable: "--font-jetbrains" });
 
-const ovo = Ovo({ 
-  subsets: ["latin"], 
-  weight :["400"] 
-}); 
+export const metadata = {
+  metadataBase: new URL("https://portfolio-vert-two-02fklhfwlr.vercel.app"),
+  title: "Vivek Kumar Singh — Data, AI & Automation",
+  description:
+    "MSc Digital Engineering student in Magdeburg. Data pipelines, Power BI dashboards and applied machine learning with Python and SQL. Open to Werkstudent and internship roles.",
+  openGraph: {
+    title: "Vivek Kumar Singh — Data, AI & Automation",
+    description: "Data pipelines, dashboards and applied ML. Open to Werkstudent and internship roles in Germany.",
+    images: ["/Asset/portrait.jpg"],
+    type: "website",
+  },
+};
 
-export const metadata = { 
-  title: "Portfolio- GreatStack", 
-  description: "My working portfolio", 
-}; 
-
-export default function RootLayout({ children }) { 
-  return ( 
-    <html lang="en" className="scroll-smooth"> 
-      <body className={`${outfit.className}  antialiased leading-8 overflow-x-hidden`} > 
-        {children} 
-      </body> 
-    </html> 
-  ); 
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en" className={`${inter.variable} ${jetbrains.variable}`}>
+      <body className="antialiased overflow-x-hidden">{children}</body>
+    </html>
+  );
 }
