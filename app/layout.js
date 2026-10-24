@@ -12,7 +12,7 @@ export const metadata = {
   openGraph: {
     title: "Vivek Kumar Singh — Data, AI & Automation",
     description: "Data pipelines, dashboards and applied ML. Open to Werkstudent and internship roles in Germany.",
-    images: ["/Asset/portrait.jpg"],
+    images: ["/Asset/headshot.jpg"],
     type: "website",
   },
 };

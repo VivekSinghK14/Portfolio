@@ -71,7 +71,7 @@ const Header = () => {
           <div className='absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-accent/40 via-accent-2/20 to-transparent blur-2xl' />
           <div className='relative overflow-hidden rounded-[1.75rem] border border-line bg-surface p-2'>
             <Image
-              src='/Asset/portrait.jpg'
+              src='/Asset/headshot.jpg'
               alt={`Portrait of ${profile.name}`}
               width={800}
               height={1000}
